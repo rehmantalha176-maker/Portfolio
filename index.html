@@ -2,469 +2,970 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Talha Rehman - Software Engineering Student and Aspiring AI/ML Engineer">
-    <title>Talha Rehman | AI/ML Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+  <meta name="description"
+        content="Talha Rehman - Software Engineering Student and Aspiring AI/ML Engineer in Pakistan.">
+  <meta name="theme-color" content="#0b1220">
 
-        :root {
-            --primary: #2563eb;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --text: #475569;
-            --white: #ffffff;
-        }
+  <title>Talha Rehman | AI/ML Engineer Portfolio</title>
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--light);
-            color: var(--dark);
-            line-height: 1.7;
-        }
+  <style>
+    :root {
+      --bg: #0b1220;
+      --surface: #111c2e;
+      --surface-light: #17253a;
+      --text: #edf4ff;
+      --muted: #a6b5ca;
+      --blue: #62a8ff;
+      --cyan: #5de0d2;
+      --border: rgba(165, 190, 220, 0.15);
+      --radius: 20px;
+      --width: 1120px;
+    }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
-        }
+    body {
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(ellipse at 80% 5%, #18365b 0, transparent 35%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-        /* Navigation */
-        nav {
-            background: var(--white);
-            padding: 18px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 12px #0f172a0d;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
 
-        .logo {
-            font-size: 23px;
-            font-weight: bold;
-            color: var(--primary);
-        }
+    .container {
+      width: min(90%, var(--width));
+      margin: 0 auto;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 22px;
-            list-style: none;
-            flex-wrap: wrap;
-        }
+    .accent {
+      color: var(--blue);
+    }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-        /* Hero */
-        .hero {
-            min-height: 480px;
-            display: flex;
-            align-items: center;
-            padding: 85px 0;
-            background: linear-gradient(135deg, #eff6ff, #ffffff);
-        }
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: var(--cyan);
+    }
 
-        .hero-content {
-            max-width: 760px;
-        }
+    /* Navigation */
 
-        .tag {
-            color: var(--primary);
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11, 18, 32, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
 
-        h1 {
-            font-size: clamp(38px, 6vw, 62px);
-            line-height: 1.15;
-            margin: 18px 0;
-        }
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
-        h1 span {
-            color: var(--primary);
-        }
+    .brand {
+      font-size: 21px;
+      font-weight: 850;
+      letter-spacing: -0.8px;
+      white-space: nowrap;
+    }
 
-        .hero p {
-            color: var(--text);
-            font-size: 18px;
-            max-width: 650px;
-            margin-bottom: 28px;
-        }
+    .brand span {
+      color: var(--blue);
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 22px;
-            border-radius: 8px;
-            background: var(--primary);
-            color: var(--white);
-            font-weight: bold;
-            margin: 5px 8px 5px 0;
-            transition: 0.2s;
-        }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      list-style: none;
+    }
 
-        .btn:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
-        }
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: color 0.2s;
+    }
 
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 1px solid var(--primary);
-        }
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
 
-        .btn-outline:hover {
-            color: white;
-        }
+    /* Hero */
 
-        /* General sections */
-        section {
-            padding: 75px 0;
-        }
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      padding: 90px 0;
+      overflow: hidden;
+    }
 
-        .section-title {
-            font-size: 32px;
-            text-align: center;
-            margin-bottom: 12px;
-        }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      align-items: center;
+      gap: 65px;
+    }
 
-        .section-subtitle {
-            color: var(--text);
-            text-align: center;
-            margin-bottom: 38px;
-        }
+    .hero h1 {
+      margin: 22px 0 18px;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.07;
+      letter-spacing: -3px;
+    }
 
-        .about-text {
-            max-width: 800px;
-            margin: auto;
-            color: var(--text);
-            font-size: 17px;
-            text-align: center;
-        }
+    .hero h1 span {
+      display: block;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
+    .hero-description {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
 
-        .card {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 14px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 5px 20px #0f172a08;
-        }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 19px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 750;
+      transition: transform 0.2s, background 0.2s;
+    }
 
-        .card p, .card li {
-            color: var(--text);
-        }
+    .btn:hover {
+      transform: translateY(-3px);
+    }
 
-        .card ul {
-            padding-left: 20px;
-        }
+    .btn-primary {
+      color: #071423;
+      background: linear-gradient(110deg, var(--blue), var(--cyan));
+      border-color: transparent;
+    }
 
-        /* Education */
-        #education {
-            background: #eff6ff;
-        }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.035);
+    }
 
-        .education-card {
-            max-width: 760px;
-            margin: auto;
-        }
+    .btn-secondary:hover {
+      background: var(--surface-light);
+    }
 
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 22px;
-        }
+    .hero-note {
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 13px;
+    }
 
-        .project-label {
-            display: inline-block;
-            color: var(--primary);
-            background: #dbeafe;
-            border-radius: 20px;
-            padding: 4px 10px;
-            font-size: 13px;
-            margin: 12px 0;
-        }
+    .hero-note span {
+      color: var(--cyan);
+    }
 
-        .project-link {
-            display: inline-block;
-            color: var(--primary);
-            font-weight: bold;
-            margin-top: 14px;
-        }
+    /* Technology visual */
 
-        /* Contact */
-        #contact {
-            background: #eff6ff;
-            text-align: center;
-        }
+    .tech-panel {
+      position: relative;
+      padding: 26px;
+      border: 1px solid rgba(98, 168, 255, 0.25);
+      border-radius: 24px;
+      background: linear-gradient(
+        145deg,
+        rgba(28, 52, 80, 0.9),
+        rgba(14, 24, 40, 0.92)
+      );
+      box-shadow: 0 25px 90px rgba(0, 0, 0, 0.2);
+    }
 
-        #contact p {
-            color: var(--text);
-            margin: 10px 0 20px;
-        }
+    .tech-panel::before {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      right: -30px;
+      top: -35px;
+      background: rgba(93, 224, 210, 0.13);
+      filter: blur(45px);
+      pointer-events: none;
+    }
 
-        footer {
-            background: var(--dark);
-            color: #cbd5e1;
-            padding: 22px 0;
-            text-align: center;
-        }
+    .terminal-top {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+    }
 
-        @media (max-width: 650px) {
-            .nav-content {
-                flex-direction: column;
-            }
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
 
-            .nav-links {
-                justify-content: center;
-                gap: 12px;
-                font-size: 14px;
-            }
+    .terminal-top .dot:nth-child(2) {
+      background: var(--cyan);
+    }
 
-            .hero {
-                padding: 65px 0;
-            }
+    .terminal-top .dot:nth-child(3) {
+      background: #8795ab;
+    }
 
-            section {
-                padding: 55px 0;
-            }
-        }
-    </style>
+    .terminal-title {
+      margin-left: auto;
+    }
+
+    .code {
+      padding: 25px 0 20px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 14px;
+      line-height: 2.1;
+      overflow-wrap: anywhere;
+    }
+
+    .code .comment {
+      color: #8ea3bb;
+    }
+
+    .code .key {
+      color: var(--cyan);
+    }
+
+    .code .value {
+      color: #a8c9ff;
+    }
+
+    .tech-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 4px 0 18px;
+    }
+
+    .tech-label {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.035);
+      color: #d8e7fa;
+      font-size: 12px;
+    }
+
+    /* Shared sections */
+
+    section {
+      padding: 85px 0;
+      scroll-margin-top: 75px;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      margin: 13px 0;
+      font-size: clamp(29px, 4vw, 42px);
+      line-height: 1.2;
+      letter-spacing: -1.3px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .surface-section {
+      background: rgba(255, 255, 255, 0.018);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 17px;
+    }
+
+    .info-card,
+    .card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(
+        145deg,
+        rgba(23, 37, 58, 0.92),
+        rgba(15, 25, 42, 0.9)
+      );
+      padding: 25px;
+    }
+
+    .info-row {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .info-value {
+      font-size: 14px;
+      font-weight: 650;
+      overflow-wrap: anywhere;
+    }
+
+    /* Skills */
+
+    .skills-grid,
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(98, 168, 255, 0.5);
+    }
+
+    .card-icon {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      margin-bottom: 17px;
+      border-radius: 12px;
+      color: var(--cyan);
+      background: rgba(93, 224, 210, 0.09);
+      border: 1px solid rgba(93, 224, 210, 0.18);
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .card h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Education */
+
+    .education-card {
+      max-width: 800px;
+      display: grid;
+      grid-template-columns: 65px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .education-mark {
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      color: var(--cyan);
+      background: rgba(93, 224, 210, 0.09);
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .education-card h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .education-card .muted {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .education-year {
+      display: inline-block;
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 750;
+      margin-top: 12px;
+    }
+
+    /* Projects */
+
+    .project-number {
+      color: var(--blue);
+      font-family: Consolas, monospace;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .project-type {
+      display: inline-block;
+      margin: 15px 0 10px;
+      padding: 5px 9px;
+      border-radius: 6px;
+      color: var(--cyan);
+      background: rgba(93, 224, 210, 0.08);
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: 0.6px;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 17px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .project-link:hover {
+      color: var(--cyan);
+    }
+
+    .project-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Contact */
+
+    .contact-box {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 6vw, 60px);
+      border: 1px solid rgba(98, 168, 255, 0.25);
+      border-radius: 26px;
+      background:
+        radial-gradient(ellipse at 100% 0%, #214c76 0, transparent 50%),
+        var(--surface);
+    }
+
+    .contact-box h2 {
+      max-width: 650px;
+      margin: 14px 0;
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+    }
+
+    .contact-box p {
+      max-width: 620px;
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .email-text {
+      display: block;
+      margin-top: 20px;
+      color: #c9dcf6;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive layout */
+
+    @media (max-width: 850px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .tech-panel {
+        max-width: 550px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav-inner {
+        padding: 15px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 10px 17px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .education-card {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-content">
-            <a href="#home" class="logo">Talha Rehman.</a>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">Talha<span>.</span></a>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
+  <main>
+    <!-- Hero -->
     <header class="hero" id="home">
-        <div class="container hero-content">
-            <span class="tag">SOFTWARE ENGINEERING STUDENT</span>
+      <div class="container hero-grid">
 
-            <h1>Hello, I'm <span>Talha Rehman</span></h1>
+        <div>
+          <span class="eyebrow">Software Engineering Student</span>
 
-            <p>
-                An aspiring AI/ML Engineer passionate about software development,
-                machine learning, and data analysis. I am learning to build
-                practical technology solutions and continuously improve my skills.
-            </p>
+          <h1>
+            Talha Rehman
+            <span>Aspiring AI/ML Engineer.</span>
+          </h1>
 
-            <a href="#projects" class="btn">Explore My Work</a>
-            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          <p class="hero-description">
+            Building my foundation in software engineering, Python,
+            machine learning, and data analysis. Curious about intelligent
+            systems and motivated to turn ideas into practical solutions.
+          </p>
+
+          <div class="buttons">
+            <a class="btn btn-primary" href="#projects">Explore My Work ↗</a>
+            <a class="btn btn-secondary" href="#contact">Let's Connect</a>
+          </div>
+
+          <p class="hero-note">
+            <span>●</span> Open to relevant internship opportunities
+          </p>
         </div>
+
+        <!-- Decorative code panel -->
+        <div class="tech-panel" aria-label="Illustrative Python profile card">
+          <div class="terminal-top">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="terminal-title">talha.py</span>
+          </div>
+
+          <div class="code">
+            <div class="comment"># A little about me</div>
+            <div><span class="key">name</span> = <span class="value">"Talha Rehman"</span></div>
+            <div><span class="key">field</span> = <span class="value">"Software Engineering"</span></div>
+            <div><span class="key">interest</span> = <span class="value">"AI / ML"</span></div>
+            <div><span class="key">goal</span> = <span class="value">"Keep building"</span></div>
+          </div>
+
+          <div class="tech-divider"></div>
+          <p class="tech-label">TECHNOLOGIES & INTERESTS</p>
+
+          <div class="tech-tags">
+            <span class="tag">Python</span>
+            <span class="tag">C++</span>
+            <span class="tag">Java</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Web Development</span>
+          </div>
+        </div>
+
+      </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p class="section-subtitle">A little introduction</p>
-
-            <div class="about-text">
-                <p>
-                    I am a Software Engineering student at COMSATS University
-                    Islamabad, Abbottabad Campus, Pakistan, expecting to graduate
-                    in 2027. My main career interest is Artificial Intelligence
-                    and Machine Learning.
-                </p>
-
-                <p style="margin-top: 16px;">
-                    I am interested in programming, data analysis, web technologies,
-                    and problem-solving. My goal is to strengthen my technical
-                    knowledge, gain industry experience through an internship,
-                    and contribute to useful software and AI projects.
-                </p>
-            </div>
+    <!-- About -->
+    <section id="about" class="surface-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Introduction</span>
+          <h2>About <span class="accent">Me</span></h2>
+          <p>My background, interests, and direction.</p>
         </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" style="background: #f1f5f9;">
-        <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <p class="section-subtitle">Technologies and areas I work with</p>
-
-            <div class="skills-grid">
-                <div class="card">
-                    <h3>Programming</h3>
-                    <p>Python, C++, C#, Java, JavaScript</p>
-                </div>
-
-                <div class="card">
-                    <h3>Web Development</h3>
-                    <p>HTML, CSS, JavaScript, React, Node.js</p>
-                </div>
-
-                <div class="card">
-                    <h3>AI & Data</h3>
-                    <p>Machine Learning, Data Analysis</p>
-                </div>
-
-                <div class="card">
-                    <h3>Databases</h3>
-                    <p>MySQL, SQL Server, MongoDB</p>
-                </div>
-
-                <div class="card">
-                    <h3>Tools</h3>
-                    <p>Git, GitHub, VS Code, Visual Studio, Unity</p>
-                </div>
-
-                <div class="card">
-                    <h3>Additional Skills</h3>
-                    <p>UI/UX, Graphic Design, Communication, Problem Solving</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <p class="section-subtitle">My academic background</p>
-
-            <div class="card education-card">
-                <h3>Bachelor of Science in Software Engineering</h3>
-                <p><strong>COMSATS University Islamabad</strong></p>
-                <p>Abbottabad Campus, Pakistan</p>
-                <p>Expected Graduation: 2027</p>
-                <p>Career Focus: Artificial Intelligence and Machine Learning</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <p class="section-subtitle">
-                Add your real projects here as you complete them
-            </p>
-
-            <div class="projects-grid">
-                <div class="card">
-                    <h3>Web Development Project</h3>
-                    <span class="project-label">HTML & CSS</span>
-                    <p>
-                        A space for a website or portfolio you have built.
-                        Add a short description of its features and purpose.
-                    </p>
-                    <a class="project-link"
-                       href="https://github.com/YOUR-USERNAME"
-                       target="_blank" rel="noopener noreferrer">
-                        View GitHub →
-                    </a>
-                </div>
-
-                <div class="card">
-                    <h3>Python Project</h3>
-                    <span class="project-label">Python</span>
-                    <p>
-                        Add details about a Python program you have completed,
-                        including the problem it solves and what you learned.
-                    </p>
-                    <a class="project-link"
-                       href="https://github.com/YOUR-USERNAME"
-                       target="_blank" rel="noopener noreferrer">
-                        View GitHub →
-                    </a>
-                </div>
-
-                <div class="card">
-                    <h3>Future AI/ML Project</h3>
-                    <span class="project-label">Machine Learning</span>
-                    <p>
-                        Showcase a real machine learning project here when you
-                        have built one. Explain its dataset, model, and results.
-                    </p>
-                    <a class="project-link"
-                       href="https://github.com/YOUR-USERNAME"
-                       target="_blank" rel="noopener noreferrer">
-                        View GitHub →
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
+        <div class="about-grid">
+          <div class="about-copy">
             <p>
-                I am interested in learning, collaborating, and exploring
-                internship opportunities in software development and AI/ML.
+              I am a Software Engineering student at COMSATS University
+              Islamabad, Abbottabad Campus, Pakistan, with an expected
+              graduation year of 2027.
             </p>
 
-            <!-- Replace the links below with your real profile links -->
-            <a class="btn"
-               href="https://www.linkedin.com/in/YOUR-LINKEDIN/"
-               target="_blank" rel="noopener noreferrer">
-                LinkedIn
-            </a>
+            <p>
+              I am particularly interested in Artificial Intelligence and
+              Machine Learning, alongside software development and data
+              analysis. I enjoy learning programming concepts and exploring
+              how technology can address real-world problems.
+            </p>
 
-            <a class="btn btn-outline"
-               href="https://github.com/YOUR-USERNAME"
-               target="_blank" rel="noopener noreferrer">
-                GitHub
-            </a>
+            <p>
+              I am working toward strengthening my technical foundation,
+              developing meaningful projects, and gaining practical experience
+              through an internship where I can learn from a professional team.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-row">
+              <span class="info-label">CURRENT ROLE</span>
+              <span class="info-value">Software Engineering Student</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">UNIVERSITY</span>
+              <span class="info-value">COMSATS University Islamabad</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">CAMPUS</span>
+              <span class="info-value">Abbottabad Campus, Pakistan</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">CAREER INTEREST</span>
+              <span class="info-value">Artificial Intelligence & Machine Learning</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">GRADUATION</span>
+              <span class="info-value">Expected 2027</span>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2026 Talha Rehman | AI/ML Portfolio</p>
-            <p>Built with HTML and CSS</p>
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Technical Toolkit</span>
+          <h2>Skills & <span class="accent">Interests</span></h2>
+          <p>
+            Technologies and subject areas I am learning and working with.
+          </p>
         </div>
-    </footer>
+
+        <div class="skills-grid">
+          <article class="card">
+            <div class="card-icon">&lt;/&gt;</div>
+            <h3>Programming</h3>
+            <p>Python, C++, C#, Java, JavaScript</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">{ }</div>
+            <h3>Web Development</h3>
+            <p>HTML, CSS, JavaScript, React, Node.js</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">AI</div>
+            <h3>AI & Data</h3>
+            <p>Machine Learning and Data Analysis</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">DB</div>
+            <h3>Databases</h3>
+            <p>MySQL, SQL Server, MongoDB</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">DEV</div>
+            <h3>Development Tools</h3>
+            <p>Git, GitHub, VS Code, Visual Studio, Unity</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">✦</div>
+            <h3>Additional Skills</h3>
+            <p>UI/UX, Graphic Design, Communication, Problem Solving</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="surface-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Academic Background</span>
+          <h2>My <span class="accent">Education</span></h2>
+          <p>Building the foundation for a career in technology.</p>
+        </div>
+
+        <article class="card education-card">
+          <div class="education-mark">CU</div>
+
+          <div>
+            <h3>Bachelor of Science in Software Engineering</h3>
+            <p class="muted">COMSATS University Islamabad</p>
+            <p class="muted">Abbottabad Campus, Pakistan</p>
+            <p class="muted">
+              Academic focus and career interest: Artificial Intelligence
+              and Machine Learning.
+            </p>
+            <span class="education-year">Expected Graduation: 2027</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Selected Work</span>
+          <h2>Projects & <span class="accent">Practice</span></h2>
+          <p>
+            A portfolio becomes stronger when it showcases real work,
+            the technologies used, and the problems solved.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="card">
+            <div class="project-number">PROJECT / 01</div>
+            <h3>Personal Portfolio Website</h3>
+            <span class="project-type">HTML · CSS</span>
+            <p>
+              A responsive personal website introducing my background,
+              technical interests, education, and professional links.
+            </p>
+            <a class="project-link"
+               href="https://github.com/rehmantalha176-maker"
+               target="_blank" rel="noopener noreferrer">
+              Explore GitHub ↗
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="project-number">PROJECT / 02</div>
+            <h3>Python Project</h3>
+            <span class="project-type">PYTHON</span>
+            <p>
+              Replace this section with a Python project you have completed.
+              Describe its purpose, key features, and what you learned.
+            </p>
+            <a class="project-link"
+               href="https://github.com/rehmantalha176-maker"
+               target="_blank" rel="noopener noreferrer">
+              Explore GitHub ↗
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="project-number">PROJECT / 03</div>
+            <h3>Machine Learning Project</h3>
+            <span class="project-type">AI · MACHINE LEARNING</span>
+            <p>
+              Add a real AI/ML project here when available, including
+              the dataset, model, evaluation, and results.
+            </p>
+            <a class="project-link"
+               href="https://github.com/rehmantalha176-maker"
+               target="_blank" rel="noopener noreferrer">
+              Explore GitHub ↗
+            </a>
+          </article>
+        </div>
+
+        <p class="project-note">
+          Note: The Python and Machine Learning cards are placeholders.
+          Replace them with completed projects before presenting this
+          portfolio to recruiters.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="surface-section">
+      <div class="container">
+        <div class="contact-box">
+          <span class="eyebrow">Get In Touch</span>
+
+          <h2>Let's build something <span class="accent">meaningful.</span></h2>
+
+          <p>
+            I am interested in technology, learning opportunities,
+            collaboration, and relevant internships in software
+            development and AI/ML.
+          </p>
+
+          <div class="buttons">
+            <a class="btn btn-primary"
+               href="mailto:rehmantalha176@gmail.com">
+              Email Me ↗
+            </a>
+
+            <a class="btn btn-secondary"
+               href="https://www.linkedin.com/in/talha-rehman-5687213a1/"
+               target="_blank" rel="noopener noreferrer">
+              LinkedIn ↗
+            </a>
+
+            <a class="btn btn-secondary"
+               href="https://github.com/rehmantalha176-maker"
+               target="_blank" rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+          </div>
+
+          <a class="email-text"
+             href="mailto:rehmantalha176@gmail.com">
+            rehmantalha176@gmail.com
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 Talha Rehman. All rights reserved.</p>
+      <p>Designed with HTML & CSS · Abbottabad, Pakistan</p>
+    </div>
+  </footer>
 
 </body>
 </html>
