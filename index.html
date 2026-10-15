@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Talha Rehman - Software Engineering Student and Aspiring AI/ML Engineer">
+    <title>Talha Rehman | AI/ML Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --text: #475569;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px #0f172a0d;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            padding: 85px 0;
+            background: linear-gradient(135deg, #eff6ff, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .tag {
+            color: var(--primary);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 6vw, 62px);
+            line-height: 1.15;
+            margin: 18px 0;
+        }
+
+        h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            color: var(--text);
+            font-size: 18px;
+            max-width: 650px;
+            margin-bottom: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 8px;
+            background: var(--primary);
+            color: var(--white);
+            font-weight: bold;
+            margin: 5px 8px 5px 0;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            color: white;
+        }
+
+        /* General sections */
+        section {
+            padding: 75px 0;
+        }
+
+        .section-title {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            color: var(--text);
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: auto;
+            color: var(--text);
+            font-size: 17px;
+            text-align: center;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 14px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 5px 20px #0f172a08;
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .card p, .card li {
+            color: var(--text);
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        /* Education */
+        #education {
+            background: #eff6ff;
+        }
+
+        .education-card {
+            max-width: 760px;
+            margin: auto;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .project-label {
+            display: inline-block;
+            color: var(--primary);
+            background: #dbeafe;
+            border-radius: 20px;
+            padding: 4px 10px;
+            font-size: 13px;
+            margin: 12px 0;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: bold;
+            margin-top: 14px;
+        }
+
+        /* Contact */
+        #contact {
+            background: #eff6ff;
+            text-align: center;
+        }
+
+        #contact p {
+            color: var(--text);
+            margin: 10px 0 20px;
+        }
+
+        footer {
+            background: var(--dark);
+            color: #cbd5e1;
+            padding: 22px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 650px) {
+            .nav-content {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 12px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 65px 0;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <a href="#home" class="logo">Talha Rehman.</a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="container hero-content">
+            <span class="tag">SOFTWARE ENGINEERING STUDENT</span>
+
+            <h1>Hello, I'm <span>Talha Rehman</span></h1>
+
+            <p>
+                An aspiring AI/ML Engineer passionate about software development,
+                machine learning, and data analysis. I am learning to build
+                practical technology solutions and continuously improve my skills.
+            </p>
+
+            <a href="#projects" class="btn">Explore My Work</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">A little introduction</p>
+
+            <div class="about-text">
+                <p>
+                    I am a Software Engineering student at COMSATS University
+                    Islamabad, Abbottabad Campus, Pakistan, expecting to graduate
+                    in 2027. My main career interest is Artificial Intelligence
+                    and Machine Learning.
+                </p>
+
+                <p style="margin-top: 16px;">
+                    I am interested in programming, data analysis, web technologies,
+                    and problem-solving. My goal is to strengthen my technical
+                    knowledge, gain industry experience through an internship,
+                    and contribute to useful software and AI projects.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <p class="section-subtitle">Technologies and areas I work with</p>
+
+            <div class="skills-grid">
+                <div class="card">
+                    <h3>Programming</h3>
+                    <p>Python, C++, C#, Java, JavaScript</p>
+                </div>
+
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript, React, Node.js</p>
+                </div>
+
+                <div class="card">
+                    <h3>AI & Data</h3>
+                    <p>Machine Learning, Data Analysis</p>
+                </div>
+
+                <div class="card">
+                    <h3>Databases</h3>
+                    <p>MySQL, SQL Server, MongoDB</p>
+                </div>
+
+                <div class="card">
+                    <h3>Tools</h3>
+                    <p>Git, GitHub, VS Code, Visual Studio, Unity</p>
+                </div>
+
+                <div class="card">
+                    <h3>Additional Skills</h3>
+                    <p>UI/UX, Graphic Design, Communication, Problem Solving</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">My academic background</p>
+
+            <div class="card education-card">
+                <h3>Bachelor of Science in Software Engineering</h3>
+                <p><strong>COMSATS University Islamabad</strong></p>
+                <p>Abbottabad Campus, Pakistan</p>
+                <p>Expected Graduation: 2027</p>
+                <p>Career Focus: Artificial Intelligence and Machine Learning</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <p class="section-subtitle">
+                Add your real projects here as you complete them
+            </p>
+
+            <div class="projects-grid">
+                <div class="card">
+                    <h3>Web Development Project</h3>
+                    <span class="project-label">HTML & CSS</span>
+                    <p>
+                        A space for a website or portfolio you have built.
+                        Add a short description of its features and purpose.
+                    </p>
+                    <a class="project-link"
+                       href="https://github.com/YOUR-USERNAME"
+                       target="_blank" rel="noopener noreferrer">
+                        View GitHub →
+                    </a>
+                </div>
+
+                <div class="card">
+                    <h3>Python Project</h3>
+                    <span class="project-label">Python</span>
+                    <p>
+                        Add details about a Python program you have completed,
+                        including the problem it solves and what you learned.
+                    </p>
+                    <a class="project-link"
+                       href="https://github.com/YOUR-USERNAME"
+                       target="_blank" rel="noopener noreferrer">
+                        View GitHub →
+                    </a>
+                </div>
+
+                <div class="card">
+                    <h3>Future AI/ML Project</h3>
+                    <span class="project-label">Machine Learning</span>
+                    <p>
+                        Showcase a real machine learning project here when you
+                        have built one. Explain its dataset, model, and results.
+                    </p>
+                    <a class="project-link"
+                       href="https://github.com/YOUR-USERNAME"
+                       target="_blank" rel="noopener noreferrer">
+                        View GitHub →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p>
+                I am interested in learning, collaborating, and exploring
+                internship opportunities in software development and AI/ML.
+            </p>
+
+            <!-- Replace the links below with your real profile links -->
+            <a class="btn"
+               href="https://www.linkedin.com/in/YOUR-LINKEDIN/"
+               target="_blank" rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
+            <a class="btn btn-outline"
+               href="https://github.com/YOUR-USERNAME"
+               target="_blank" rel="noopener noreferrer">
+                GitHub
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Talha Rehman | AI/ML Portfolio</p>
+            <p>Built with HTML and CSS</p>
+        </div>
+    </footer>
+
+</body>
+</html>
